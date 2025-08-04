@@ -7,7 +7,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 80px auto;
     gap: 24px;
     height: 100vh;
@@ -37,9 +37,26 @@ nav {
     gap: 12px;
 }
 
-nav button {
+nav button, #bookDialog button {
     background-color: #2ecc71;
     color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #27ae60;
+}
+
+.addBook {
+    background-color: #027532;
+    color: white;
+    font-weight: bolder;
     border: none;
     padding: 10px 16px;
     border-radius: 8px;
@@ -48,7 +65,7 @@ nav button {
     transition: background-color 0.3s ease;
 }
 
-nav button:hover {
+.addBook:hover {
     background-color: #27ae60;
 }
 
@@ -70,6 +87,9 @@ nav button:hover {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Headings */
@@ -93,3 +113,95 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+#bookDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    background-color: #027532;
+    color: white;
+    font-weight: bolder;
+
+}
+
+#bookDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#bookDialog form {
+    display: grid;
+    gap: 15px;
+}
+
+#bookDialog p {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+#bookDialog p:has(input[type="checkbox"]) {
+    grid-template-columns: 1fr; /* Special case for checkbox */
+}
+
+#bookDialog input[type="text"], 
+#bookDialog input[type="number"] {
+    font-size: 16px;
+    text-align: center;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#bookDialog input[type="text"]:focus, 
+#bookDialog input[type="number"]:focus {
+    outline: none;
+    border-color: #2ecc71; /* Matches your button color */
+}
+
+.book-container  {
+    text-align: center;
+    display: flex inline;
+    flex-direction: column;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 6px;
+    color: rgb(235, 66, 235);
+    padding: 20px;
+    gap: 10px;
+    background-color:  #34495e;
+}
+
+.book-container > p {
+    text-align: right;
+}
+
+.book-container > h3, h4, h5 {
+    color: #ddd;
+}
+
+.book-container:hover {
+    background-color: #27ae60;
+}
+
+.book-container > h3 {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.book {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    grid-template-rows: repeat(1fr 1fr 1fr);
+}
+

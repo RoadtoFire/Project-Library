@@ -26,6 +26,36 @@
 
     <div class="right-side">
         <h2>Add Books</h2>
+            <button class="addBook" id="addBook">Add a new Book</button>
+            <dialog id="bookDialog">
+                <form id="bookAddForm">
+                    <p>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="book_title"/>
+                    </p>
+                    <p>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="book_author"/>
+                    </p>
+                    <p>
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" name="book_pages"/>
+                    </p>
+                    <p>
+                        <label for="read">
+                            <input type="checkbox" id="read" name="book_read" />
+                            Already read this book?
+                        </label>
+                    </p>
+                    <p>
+                        <button type="submit" id="submit">Add Book</button>
+                        <button type="button" id="cancelBtn">Cancel</button>
+                    </p>                    
+                </form>
+            </dialog>
+    </div>                    
+                </form>
+            </dialog>
     </div>
 
 
