@@ -3,62 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Library</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <button>Home</button>
-            <button>Recommended Books</button>
-        </div>
-        <div class="nav-right">
-            <button><a href="https://github.com/RoadtoFire/Project-Library">GitHub Repo</a> </button>        
-        </div>
-    </nav>
+    <h1>My Library</h1>
 
-    <div class="main-display">
-        <h1>Library</h1>
-            <div class="book">
+    <form id="book-form">
+        <input id="title" placeholder="Title" required>
+        <input id="author" placeholder="Author" required>
+        <input id="pages" placeholder="Pages" required type="number">
 
-            </div>
-    </div>
+        <label>
+            <input id="read" type="checkbox">Read
+        </label>
 
-    <div class="right-side">
-        <h2>Add Books</h2>
-            <button class="addBook" id="addBook">Add a new Book</button>
-            <dialog id="bookDialog">
-                <form id="bookAddForm">
-                    <p>
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" name="book_title"/>
-                    </p>
-                    <p>
-                        <label for="author">Author:</label>
-                        <input type="text" id="author" name="book_author"/>
-                    </p>
-                    <p>
-                        <label for="pages">Pages</label>
-                        <input type="number" id="pages" name="book_pages"/>
-                    </p>
-                    <p>
-                        <label for="read">
-                            <input type="checkbox" id="read" name="book_read" />
-                            Already read this book?
-                        </label>
-                    </p>
-                    <p>
-                        <button type="submit" id="submit">Add Book</button>
-                        <button type="button" id="cancelBtn">Cancel</button>
-                    </p>                    
-                </form>
-            </dialog>
-    </div>                    
-                </form>
-            </dialog>
-    </div>
+        <button type="submit" id="submit-btn">Add Book</button>
+    </form>
 
+    <div id="library-display"></div>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
